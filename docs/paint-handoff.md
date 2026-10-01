@@ -1,27 +1,21 @@
 # Paint handoff
 
-mflux paints plaque and label decals. fantasy-sneaker draws gauge and dial faces with `tools/dialface.py` and composites them into the design. meshytools builds the mesh. command-control shows the owner the picture before any credit moves.
+A fresh session can run this from the commission letter. mflux paints plaque and label decals. It does not draw gauge or dial faces, and it does not build the mesh.
 
-## Sequence
+## Checklist
 
-1. fantasy-sneaker commissions the prop: sizes, slots, tier, and quad topology for hard-surface props.
-2. meshytools draws one design of record with the display faces blank and reports the slot centres. Wording is invented. It is never a real firm's name.
-3. fantasy-sneaker draws the gauge and dial faces by script and composites them into that design. The dial law is: numerals evenly on the arc at the major ticks, minor ticks between them, the label centred above a centred hub, the bezel concentric with the face, drawn and not diffused.
-4. The owner accepts or corrects that picture. No create runs before he accepts.
-5. meshytools regenerates the blank views (`no text, no lettering, blank plaques, blank dial faces`), checks them against the slots, and runs one quad create. A bad create is reported with the retry cost. It is not re-run without a letter.
-6. mflux paints the plaque and label decals from the accepted design, at the measured anchor size.
-7. fantasy-sneaker places those decals on the anchors, verifies, files them, and names the deliverables folder to command-control.
+1. fantasy-sneaker commissions the prop: sizes, slots, tier, and quad topology. That letter is the start. Commission sizes are targets.
+2. meshytools draws one straight-on design of record. The prompt asks for blank faces and a blank plaque. Re-roll until the picture is clean. Never patch a generated picture. Report the slot centres on that picture, and hand the picture and the slot file to fantasy-sneaker, command-control, and mflux.
+3. fantasy-sneaker draws the gauge and dial faces with `tools/dialface.py` and composites them onto the picture, changing no other pixel. Name the plaque wording before the mesh exists. Wording is invented, never a real firm's name. Hand the composite to command-control. The dial law is: numerals evenly on the arc at the major ticks, minor ticks between them, the label centred above a centred hub, the bezel concentric with the face, drawn and not diffused.
+4. command-control shows the owner that composite. No create runs before he accepts. The acceptance goes to meshytools and mflux.
+5. meshytools builds three views from the clean roll: front straight on, a shallow three-quarter, and a back. Drop any view that distorts the slope. One quad create. A bad create is reported with the retry cost and is not re-run without a letter. Hand over the mesh and the `display_<slot>` anchors with the landed sizes.
+6. mflux paints the plaque, and a label when the commission has one, at the landed anchor. The canvas long side is 512, or 1024 when that anchor's long side is over half a metre: 512 by 256, or 1024 by 512, for a landscape plaque. The plate fills the width, and transparent margins make up the canvas aspect. Straight alpha. Write `output/decals/<prop>/<slot>.png` and mail the PNG to fantasy-sneaker, named for `assets/decals/<prop>/<slot>.png`. `/tmp` is scratch and is never the only copy.
+7. fantasy-sneaker places the decals, verifies, files them with a SOURCES row, and exports the dressed viewing pair beside the delivered files. meshytools' verify treats that pair as a sidecar. fantasy-sneaker names the folder to command-control.
 
-## What mflux paints
+The dial-console is the reference run. Its plaque reads ASH & VANE / DYNAMO No. 2, canvas 512 by 256, plate 512 by 241 and centred, from `display_plaque` 0.2008 by 0.0946 m. It was mailed in 0080 and filed by fantasy-sneaker at 9ebd636. The instrument-panel plaque is 512 by 256, the plate about 171 px tall and centred, reading ASH & VANE / BOILER No. 4.
 
-Wait until the design is the accepted record and meshytools has reported the measured anchor for that slot.
-
-- A plaque is one straight-alpha RGBA PNG. The canvas long side is 512, or 1024 when the measured anchor's long side is over half a metre: 512 by 256, or 1024 by 512. The plate fills the slot's width, and transparent margins make up that aspect. The instrument-panel plaque is 512 by 256, the plate about 171 px tall and centred, reading ASH & VANE / BOILER No. 4. The dial-console plaque reads ASH & VANE / DYNAMO No. 2 on a 512 by 256 canvas, the plate 512 by 241 and centred, from display_plaque 0.2008 by 0.0946 m.
-- The control-plate label is the 0.28 by 0.07 strip centred on a 512 by 256 canvas, about 128 px tall, with transparent margin above and below.
-- Gauge and dial faces are not painted here.
-
-Write the file at `output/decals/<prop>/<slot>.png`. Mail it to fantasy-sneaker when it lands, named for `assets/decals/<prop>/<slot>.png`. `/tmp` is scratch and is never the only copy.
+The control-plate label is commissioned as a 0.28 by 0.07 strip. Paint it when that design is accepted and the anchor is measured. The landed size governs.
 
 ## Texture families
 
-A texture family is one folder: the base, its variations, the contact sheet, and the manifest. meshytools places it at `~/meshyworking/deliverables/fantasy-sneaker/textures/<family>/` and mails it. mflux does not paint the base. v07 to v10 are unique-feature variations on a steampunk Material Maker base, written under `output/tiles/` and mailed for meshytools to place, and only after command-control has accepted that base. A rejected base is not a source. The four bases lost from `/tmp` are superseded. Do not repaint them. v11 and later wait on the owner's word.
+A texture family is one folder: the base, its variations, the contact sheet, and the manifest. meshytools places it at `~/meshyworking/deliverables/fantasy-sneaker/textures/<family>/` and mails it. mflux does not paint the base. A Material Maker base must read as its family and carry that family's structure. meshytools mails the base alone, and command-control's yes comes before its variations. mflux paints v07 to v10 only on an accepted base, as unique-feature variations, writes them under `output/tiles/`, and mails them for meshytools to place. A rejected base is not a source. The four bases lost from `/tmp` are superseded. Do not repaint them. v11 and later wait on the owner's word.
