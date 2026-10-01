@@ -16,7 +16,7 @@ mflux paints plaque and label decals. fantasy-sneaker draws gauge and dial faces
 
 Wait until the design is the accepted record and meshytools has reported the measured anchor for that slot.
 
-- A plaque uses the contract's fixed canvas, 512 by 256. The plate fills the slot's width, and transparent margins make up that aspect. The instrument-panel plaque is that canvas, the plate about 171 px tall and centred, reading ASH & VANE / BOILER No. 4.
+- A plaque is one straight-alpha RGBA PNG. The canvas long side is 512, or 1024 when the measured anchor's long side is over half a metre: 512 by 256, or 1024 by 512. The plate fills the slot's width, and transparent margins make up that aspect. The instrument-panel plaque is 512 by 256, the plate about 171 px tall and centred, reading ASH & VANE / BOILER No. 4. The dial-console plaque reads ASH & VANE / DYNAMO No. 2 and waits on the mesh measurement of display_plaque.
 - The control-plate label is the 0.28 by 0.07 strip centred on a 512 by 256 canvas, about 128 px tall, with transparent margin above and below.
 - Gauge and dial faces are not painted here.
 
