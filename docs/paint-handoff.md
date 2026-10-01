@@ -24,4 +24,4 @@ Write the file at `output/decals/<prop>/<slot>.png`. Mail it to fantasy-sneaker 
 
 ## Texture families
 
-A texture family is one folder: the base, its variations, the contact sheet, and the manifest. In the meshy deliverables tree that folder is `~/meshyworking/deliverables/<project>/<category>/<family>/`. meshytools owns that tree. New family bases wait until command-control relays the owner's Material Maker ruling. Finished tiles go under `output/tiles/` and are mailed as each base lands.
+A texture family is one folder: the base, its variations, the contact sheet, and the manifest. meshytools places it at `~/meshyworking/deliverables/fantasy-sneaker/textures/<family>/` and mails it. mflux does not paint the base. When a steampunk Material Maker base lands, mflux paints v07 to v10 as unique-feature variations on that base, writes them under `output/tiles/`, and mails them for meshytools to place. The four bases lost from `/tmp` are superseded. Do not repaint them. v11 and later wait on the owner's word.
