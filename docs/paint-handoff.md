@@ -19,3 +19,13 @@ The control-plate label is commissioned as a 0.28 by 0.07 strip. Paint it when t
 ## Texture families
 
 A texture family is one folder: the base, its variations, the contact sheet, and the manifest. meshytools places it at `~/meshyworking/deliverables/fantasy-sneaker/textures/<family>/` and mails it. mflux does not paint the base. A Material Maker base must read as its family and carry that family's structure. meshytools mails the base alone, and command-control's yes comes before its variations. mflux paints v07 to v10 only on an accepted base, as unique-feature variations, writes them under `output/tiles/`, and mails them for meshytools to place. A rejected base is not a source. The four bases lost from `/tmp` are superseded. Do not repaint them. v11 and later wait on the owner's word.
+
+## Where this stands
+
+The night of 2026-09-30. The pull request is https://github.com/Therianulf/mflux/pull/1. Further commits stay on `feature`.
+
+Done: the instrument-panel plaque, and the dial-console plaque (ASH & VANE / DYNAMO No. 2, canvas 512 by 256, plate 512 by 241, mailed in 0080, filed by fantasy-sneaker at 9ebd636).
+
+In flight: v07 to v10 are not painted. They wait on command-control's yes to a Material Maker base. The iron-plate craft base mailed in 0140, sha256 `ed0cd5687af76dcadae87c6f02097d879af0c3403cb96234ea6ab2a51eea4c6e`, is not a yes. Do not paint it. The earlier redo and the rust-noise `iron-plate-riveted-mm` set are not sources. Files under `output/tiles/iron-plate-riveted/` from that rejected set are not the family.
+
+Next: when a base is accepted, paint v07 to v10 on it and mail them. The control-plate label still waits on an accepted design and a measured anchor.
