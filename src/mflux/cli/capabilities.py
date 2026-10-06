@@ -57,6 +57,7 @@ def discover_commands() -> list[tuple[str, str]]:
 _CONVERTER_WIRE_TYPES = {
     _parsers.positive_float: "float",
     _parsers.finite_float: "float",
+    _parsers.open_unit_float: "float",
     _parsers.vae_tile_size: "int",
     _parsers.int_or_special_value: "int-or-scale",
     Path: "path",
@@ -101,12 +102,9 @@ def _jsonable(value: Any) -> Any:
 
 
 def _describe_option(action: argparse.Action, ignored: dict, conditional: dict, rejected: dict) -> dict[str, Any]:
-    if isinstance(action, argparse.BooleanOptionalAction):
-        # argparse registers the positive form first; publishing the longest string would make
-        # the negated --no-* flag canonical while parser_default stays True.
-        flag = action.option_strings[0]
-    else:
-        flag = max(action.option_strings, key=len)
+    # The first long option is canonical: a renamed flag keeps its old name as a later alias
+    # (--no-exif, --no-metadata), and BooleanOptionalAction registers the positive form first.
+    flag = next((o for o in action.option_strings if o.startswith("--")), action.option_strings[0])
     record: dict[str, Any] = {
         "flag": flag,
         "type": _option_type_name(action),
