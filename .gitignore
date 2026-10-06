@@ -34,8 +34,10 @@ build/
 .aux
 .log
 .claude
-CLAUDE.md
 .gitnexus
+
+# Local render batches. Finished tiles live here so a reboot cannot delete them.
+output/
 .agents/skills/gitnexus-cli/SKILL.md
 .agents/skills/gitnexus-debugging/SKILL.md
 .agents/skills/gitnexus-exploring/SKILL.md
