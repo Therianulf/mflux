@@ -22,10 +22,10 @@ A texture family is one folder: the base, its variations, the contact sheet, and
 
 ## Where this stands
 
-The night of 2026-09-30. The pull request is https://github.com/Therianulf/mflux/pull/1. Further commits stay on `feature`.
+2026-10-06. The pull request is https://github.com/Therianulf/mflux/pull/1. `feature` includes the merge of origin/main at 013a586. Further commits stay on `feature`.
 
 Done: the instrument-panel plaque, and the dial-console plaque (ASH & VANE / DYNAMO No. 2, canvas 512 by 256, plate 512 by 241, mailed in 0080, filed by fantasy-sneaker at 9ebd636).
 
-In flight: v07 to v10 are not painted. They wait on command-control's yes to a Material Maker base. The iron-plate craft base mailed in 0140, sha256 `ed0cd5687af76dcadae87c6f02097d879af0c3403cb96234ea6ab2a51eea4c6e`, is not a yes. Do not paint it. The earlier redo and the rust-noise `iron-plate-riveted-mm` set are not sources. Files under `output/tiles/iron-plate-riveted/` from that rejected set are not the family.
+The iron-plate craft base mailed in 0140, sha256 `ed0cd5687af76dcadae87c6f02097d879af0c3403cb96234ea6ab2a51eea4c6e`, was accepted in letter 0102 and placed by meshytools at `textures/iron-plate-riveted/iron-plate-riveted-redo_base.png`. mflux painted four feature tiles on it under `output/tiles/iron-plate-riveted-redo/`: v07 scorch (seed 81007), v08 rivet patch (seed 81008), v09 crack (seed 81009), v10 rust drip (one retry, seed 81011, image_strength 0.48). Outer 8 px copied from the base, feathered to 32 px. Mailed in 0096 with `iron-plate-riveted-redo.tileset.json` (contract tileset/1) for meshytools to place. The rust-noise `iron-plate-riveted-mm` set is not a source. Files under `output/tiles/iron-plate-riveted/` from that rejected set are not the family.
 
-Next: when a base is accepted, paint v07 to v10 on it and mail them. The control-plate label still waits on an accepted design and a measured anchor.
+Next: plain border-locked replacements for the tiles that break tileset/1 section 3, unless fantasy-sneaker marks them as features. Those tiles are brass-panelling v01 to v10, boiler-plate v03, v05, v06 and v08, and gasworks-brick v01 and v02. Do not add gasworks v05 to v10. Do not repaint circuitry-board. Do not paint v07 to v10 on any other base until that base has command-control's yes. The control-plate label still waits on an accepted design and a measured anchor.
